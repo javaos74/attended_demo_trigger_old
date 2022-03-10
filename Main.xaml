@@ -1,4 +1,4 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="Main" mva:VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="1038,3770" sap2010:WorkflowViewState.IdRef="Main_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="Main" mva:VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="1038,4035" sap2010:WorkflowViewState.IdRef="Main_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:uwa="clr-namespace:UiPathTeam.WhatsGoingOn.Activities;assembly=UiPathTeam.WhatsGoingOn.Activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="42">
       <x:String>System.Activities.XamlIntegration</x:String>
@@ -35,6 +35,7 @@
       <x:String>System.ComponentModel</x:String>
       <x:String>UiPath.UIAutomationNext.Contracts</x:String>
       <x:String>System.Runtime.Serialization</x:String>
+      <x:String>UiPathTeam.WhatsGoingOn.Activities</x:String>
     </scg:List>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
@@ -70,22 +71,24 @@
       <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
       <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
       <AssemblyReference>System.Runtime.Serialization</AssemblyReference>
+      <AssemblyReference>UiPathTeam.WhatsGoingOn.Activities</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Agent Assistant Robot" sap:VirtualizedContainerService.HintSize="1048,3705" sap2010:WorkflowViewState.IdRef="Sequence_2">
+  <Sequence DisplayName="Agent Assistant Robot" sap:VirtualizedContainerService.HintSize="1048,3970" sap2010:WorkflowViewState.IdRef="Sequence_2">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
     <ui:Comment sap:VirtualizedContainerService.HintSize="1006,133.5" sap2010:WorkflowViewState.IdRef="Comment_3" Text="// Configure the triggers below while add/remove other trigger activities based on your needs; they are monitored simultaneously and the event handler is executed once for any occuring event" />
-    <ui:TriggerScope DisplayName="Monitor Agent Action" sap:VirtualizedContainerService.HintSize="1006,3439.5" sap2010:WorkflowViewState.IdRef="TriggerScope_1" SchedulingMode="Sequential">
+    <uwa:ShowPopup MyCustomHeight="{x:Null}" MyCustomWidth="{x:Null}" MyTitle="{x:Null}" MyXCoord="{x:Null}" MyYCoord="{x:Null}" DisplayName="Show Popup Window" sap:VirtualizedContainerService.HintSize="1006,62" sap2010:WorkflowViewState.IdRef="ShowPopup_1" MyBackColor="Blue" MyFontFamily="Consolas" MyFontSize="Size_12" MyFontStyle="Regular" MyHPosition="Right" MyMessage="파일 변경 모니터링 중 ..." MyTextColor="White" MyVPosition="Bottom" MyWidth="Half" />
+    <ui:TriggerScope DisplayName="Monitor Agent Action" sap:VirtualizedContainerService.HintSize="1006,3602.5" sap2010:WorkflowViewState.IdRef="TriggerScope_1" SchedulingMode="Sequential">
       <ui:TriggerScope.Action>
         <ActivityAction x:TypeArguments="ui:FileChangeTriggerArgs">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="ui:FileChangeTriggerArgs" Name="args" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Event Handler" sap:VirtualizedContainerService.HintSize="954,2816.5" sap2010:WorkflowViewState.IdRef="Sequence_5">
+          <Sequence DisplayName="Event Handler" sap:VirtualizedContainerService.HintSize="954,2979.5" sap2010:WorkflowViewState.IdRef="Sequence_5">
             <Sequence.Variables>
               <Variable x:TypeArguments="ui:UiElement" Name="EditableText" />
             </Sequence.Variables>
@@ -97,35 +100,37 @@
             <ui:Comment sap:VirtualizedContainerService.HintSize="912,94.5" sap2010:WorkflowViewState.IdRef="Comment_4" Text="// Implement the logic to be executed when any of the monitor events occur and the trigger is fired" />
             <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="912,93" sap2010:WorkflowViewState.IdRef="LogMessage_1" Message="[args.TriggerName + args.FileChangeInfo.FullPath]" />
             <ui:Comment sap:VirtualizedContainerService.HintSize="912,75" sap2010:WorkflowViewState.IdRef="Comment_5" Text="// UseForeground activity enables running a specified set of activities, in the foreground" />
-            <ui:UseForegroundScope WaitForeground="{x:Null}" DisplayName="Use Foreground" sap:VirtualizedContainerService.HintSize="912,2342" sap2010:WorkflowViewState.IdRef="UseForegroundScope_1">
+            <ui:UseForegroundScope WaitForeground="{x:Null}" DisplayName="Use Foreground" sap:VirtualizedContainerService.HintSize="912,2505" sap2010:WorkflowViewState.IdRef="UseForegroundScope_1">
               <ui:UseForegroundScope.Body>
                 <ActivityAction x:TypeArguments="x:Object">
-                  <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="876,2264" sap2010:WorkflowViewState.IdRef="Sequence_6">
+                  <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="876,2427" sap2010:WorkflowViewState.IdRef="Sequence_6">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
-                    <ui:BlockUserInput TimeoutMS="{x:Null}" BlockType="All" DisplayName="Block User Input" sap:VirtualizedContainerService.HintSize="834,2172" sap2010:WorkflowViewState.IdRef="BlockUserInput_1" KeyModifiers="Alt" SpecialKey="True">
+                    <uwa:ShowPopup MyCustomHeight="{x:Null}" MyCustomWidth="{x:Null}" MyTitle="{x:Null}" MyXCoord="{x:Null}" MyYCoord="{x:Null}" DisplayName="Show Popup Window" sap:VirtualizedContainerService.HintSize="834,62" sap2010:WorkflowViewState.IdRef="ShowPopup_2" MyBackColor="Blue" MyFontFamily="Consolas" MyFontSize="Size_12" MyFontStyle="Regular" MyHPosition="Right" MyMessage="파일 변경 감지 후 번역 프로세스 시작 " MyTextColor="White" MyVPosition="Bottom" MyWidth="Half" />
+                    <ui:BlockUserInput TimeoutMS="{x:Null}" BlockType="All" DisplayName="Block User Input" sap:VirtualizedContainerService.HintSize="834,2233" sap2010:WorkflowViewState.IdRef="BlockUserInput_1" KeyModifiers="Alt" SpecialKey="True">
                       <ui:BlockUserInput.Body>
-                        <Sequence DisplayName="실행" sap:VirtualizedContainerService.HintSize="798,2045" sap2010:WorkflowViewState.IdRef="Sequence_11">
+                        <Sequence DisplayName="실행" sap:VirtualizedContainerService.HintSize="798,2106" sap2010:WorkflowViewState.IdRef="Sequence_11">
                           <sap:WorkflowViewStateService.ViewState>
                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
                               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                             </scg:Dictionary>
                           </sap:WorkflowViewStateService.ViewState>
-                          <uix:NApplicationCard AttachMode="ByInstance" CloseMode="IfOpenedByAppBrowser" DisplayName="Use Browser Edge: Google 번역" sap:VirtualizedContainerService.HintSize="756,1953" sap2010:WorkflowViewState.IdRef="NApplicationCard_2" InteractionMode="DebuggerApi" OpenMode="IfNotOpen" ScopeGuid="f04f4732-1ebe-46d2-a5ef-caea17416d13" Version="V1">
+                          <uix:NApplicationCard AttachMode="ByInstance" CloseMode="IfOpenedByAppBrowser" DisplayName="Use Browser Edge: Google 번역" sap:VirtualizedContainerService.HintSize="756,2014" sap2010:WorkflowViewState.IdRef="NApplicationCard_2" InteractionMode="DebuggerApi" OpenMode="IfNotOpen" ScopeGuid="f04f4732-1ebe-46d2-a5ef-caea17416d13" Version="V1">
                             <uix:NApplicationCard.Body>
                               <ActivityAction x:TypeArguments="x:Object">
                                 <ActivityAction.Argument>
                                   <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
                                 </ActivityAction.Argument>
-                                <Sequence DisplayName="실행" sap:VirtualizedContainerService.HintSize="722,1736" sap2010:WorkflowViewState.IdRef="Sequence_8">
+                                <Sequence DisplayName="실행" sap:VirtualizedContainerService.HintSize="722,1797" sap2010:WorkflowViewState.IdRef="Sequence_8">
                                   <sap:WorkflowViewStateService.ViewState>
                                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                     </scg:Dictionary>
                                   </sap:WorkflowViewStateService.ViewState>
+                                  <uwa:HidePopup DisplayName="Hide Popup Window" sap:VirtualizedContainerService.HintSize="680,22" sap2010:WorkflowViewState.IdRef="HidePopup_1" />
                                   <uix:NClick ClickType="Single" DisplayName="Click '문서'" sap:VirtualizedContainerService.HintSize="680,157" sap2010:WorkflowViewState.IdRef="NClick_1" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="f04f4732-1ebe-46d2-a5ef-caea17416d13" Version="V1">
                                     <uix:NClick.Target>
                                       <uix:TargetAnchorable BrowserURL="https://translate.google.com/" DesignTimeRectangle="868, 331, 57, 38" ElementType="Text" FriendlyName="'문서'" FullSelectorArgument="&lt;webctrl aaname='문서' parentid='yDmH0d' tag='SPAN' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='문서' parentid='yDmH0d' tag='SPAN' type='' check:text='문서' /&gt;" Guid="c9b37194-ccdf-42ba-b80b-a10b89f4bf7d" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAD0AAAAqCAYAAAAAsVPKAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAHYcAAB2HAY/l8WUAAAJaSURBVGhD7Zoxb9pAFMf7OfgS/hIVEurWBbFVTFkZukRRBgupQxcPkTogZYs61GsZYEbOACIK0GKDW1FXSqpEyI6EkFj+9dmxsclLocRWcmcPv8Xv+XE/3+N8ku9VsVjEarUSjslkgmaziXq9DuYYRVjpKJ1OB+VyOVvSjF6vlz1phqIo2ZNut9vZkzYMI3vSjFxaDCwoB5coHOg4J+O7SFsm3nlF9mUI1SLqpgb30rdQj/06SpeKUyQq/XgRmmDAufR/kksTcYpcmoi/eOkbqIe+tKwtiTgF79KLGY68377E28/XdM4DEpXelydIXxh4HdQ5nMKMxraOi0vpJfqng0idAT5dRFo8Vennwg5ae4Sjj768pMxwR+XGSKK9n4X1LEvKL9yFszpwFzSHyI/Cq7Q+RcUb+BBnP9i1JcwvQ+8hFGqujL2RH2Mf6a7uF0+Rf75zbXfQNT/vzelVJOa+vmT/uiSbMBeRe2LwJr34E4oVagb6m/HIA5HkKb6RM556eyexAbnHvsZZIOwuXqr1yGbE+on39+KF2neo+uZ/nAvpJW5G5lrEXayU7pbF6moGORTX0Y+1ehLSQbufWEQ8GWnz6whSIKzZRA4B64wPVEdwIc1wcH4ycjcf215Hu8CNdJKkLv0SyaWJeC5NJ4TST+HYxG+qdirk0kR8F2kBCaXZ1zwqQTRiXy3Zd1sqSTRardZamh1GoZJEo9ForKUZ7DAKlSgK4/EYpVIpLl2pVLzDKNQNvMOEq9Wq5xmTDmCHUTRNw3w+JwvwguM43iSylg5mOOCBtPgU8RdkuO0+Nax9sQAAAABJRU5ErkJggg==" InformativeScreenshot="92da8516b8744d15b6b847fa018e9ca0.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Google 번역' /&gt;" SearchSteps="FuzzySelector, Image">
