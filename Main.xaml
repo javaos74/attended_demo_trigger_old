@@ -1,4 +1,4 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="Main" mva:VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="1038,4035" sap2010:WorkflowViewState.IdRef="Main_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:uwa="clr-namespace:UiPathTeam.WhatsGoingOn.Activities;assembly=UiPathTeam.WhatsGoingOn.Activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="Main" mva:VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="1164,4521" sap2010:WorkflowViewState.IdRef="Main_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:uwa="clr-namespace:UiPathTeam.WhatsGoingOn.Activities;assembly=UiPathTeam.WhatsGoingOn.Activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="42">
       <x:String>System.Activities.XamlIntegration</x:String>
@@ -74,64 +74,61 @@
       <AssemblyReference>UiPathTeam.WhatsGoingOn.Activities</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Agent Assistant Robot" sap:VirtualizedContainerService.HintSize="1048,3970" sap2010:WorkflowViewState.IdRef="Sequence_2">
+  <Sequence DisplayName="Agent Assistant Robot" sap:VirtualizedContainerService.HintSize="1174,4456" sap2010:WorkflowViewState.IdRef="Sequence_2">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:Comment sap:VirtualizedContainerService.HintSize="1006,133.5" sap2010:WorkflowViewState.IdRef="Comment_3" Text="// Configure the triggers below while add/remove other trigger activities based on your needs; they are monitored simultaneously and the event handler is executed once for any occuring event" />
-    <uwa:ShowPopup MyCustomHeight="{x:Null}" MyCustomWidth="{x:Null}" MyTitle="{x:Null}" MyXCoord="{x:Null}" MyYCoord="{x:Null}" DisplayName="Show Popup Window" sap:VirtualizedContainerService.HintSize="1006,62" sap2010:WorkflowViewState.IdRef="ShowPopup_1" MyBackColor="Blue" MyFontFamily="Consolas" MyFontSize="Size_12" MyFontStyle="Regular" MyHPosition="Right" MyMessage="파일 변경 모니터링 중 ..." MyTextColor="White" MyVPosition="Bottom" MyWidth="Half" />
-    <ui:TriggerScope DisplayName="Monitor Agent Action" sap:VirtualizedContainerService.HintSize="1006,3602.5" sap2010:WorkflowViewState.IdRef="TriggerScope_1" SchedulingMode="Sequential">
+    <ui:Comment sap:VirtualizedContainerService.HintSize="1132,133.5" sap2010:WorkflowViewState.IdRef="Comment_3" Text="// Configure the triggers below while add/remove other trigger activities based on your needs; they are monitored simultaneously and the event handler is executed once for any occuring event" />
+    <uwa:ShowPopup MyCustomHeight="{x:Null}" MyCustomWidth="{x:Null}" MyTitle="{x:Null}" MyXCoord="{x:Null}" MyYCoord="{x:Null}" DisplayName="Show Popup Window &gt; 모니터링 시작 " sap:VirtualizedContainerService.HintSize="1132,62" sap2010:WorkflowViewState.IdRef="ShowPopup_1" MyBackColor="Blue" MyFontFamily="Consolas" MyFontSize="Size_12" MyFontStyle="Regular" MyHPosition="Right" MyMessage="파일 변경 모니터링 중 ..." MyTextColor="White" MyVPosition="Bottom" MyWidth="Half" />
+    <ui:TriggerScope DisplayName="Monitor Agent Action" sap:VirtualizedContainerService.HintSize="1132,4088.5" sap2010:WorkflowViewState.IdRef="TriggerScope_1" SchedulingMode="Sequential">
       <ui:TriggerScope.Action>
         <ActivityAction x:TypeArguments="ui:FileChangeTriggerArgs">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="ui:FileChangeTriggerArgs" Name="args" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Event Handler" sap:VirtualizedContainerService.HintSize="954,2979.5" sap2010:WorkflowViewState.IdRef="Sequence_5">
-            <Sequence.Variables>
-              <Variable x:TypeArguments="ui:UiElement" Name="EditableText" />
-            </Sequence.Variables>
+          <Sequence DisplayName="Event Handler" sap:VirtualizedContainerService.HintSize="1080,3465.5" sap2010:WorkflowViewState.IdRef="Sequence_5">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <ui:Comment sap:VirtualizedContainerService.HintSize="912,94.5" sap2010:WorkflowViewState.IdRef="Comment_4" Text="// Implement the logic to be executed when any of the monitor events occur and the trigger is fired" />
-            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="912,93" sap2010:WorkflowViewState.IdRef="LogMessage_1" Message="[args.TriggerName + args.FileChangeInfo.FullPath]" />
-            <ui:Comment sap:VirtualizedContainerService.HintSize="912,75" sap2010:WorkflowViewState.IdRef="Comment_5" Text="// UseForeground activity enables running a specified set of activities, in the foreground" />
-            <ui:UseForegroundScope WaitForeground="{x:Null}" DisplayName="Use Foreground" sap:VirtualizedContainerService.HintSize="912,2505" sap2010:WorkflowViewState.IdRef="UseForegroundScope_1">
+            <ui:Comment DisplayName="Comment &gt; 1" sap:VirtualizedContainerService.HintSize="1038,94.5" sap2010:WorkflowViewState.IdRef="Comment_4" Text="// Implement the logic to be executed when any of the monitor events occur and the trigger is fired" />
+            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="1038,93" sap2010:WorkflowViewState.IdRef="LogMessage_1" Message="[args.TriggerName + args.FileChangeInfo.FullPath]" />
+            <ui:Comment DisplayName="Comment &gt; 3" sap:VirtualizedContainerService.HintSize="1038,75" sap2010:WorkflowViewState.IdRef="Comment_5" Text="// UseForeground activity enables running a specified set of activities, in the foreground" />
+            <ui:UseForegroundScope WaitForeground="{x:Null}" DisplayName="Use Foreground" sap:VirtualizedContainerService.HintSize="1038,2991" sap2010:WorkflowViewState.IdRef="UseForegroundScope_1">
               <ui:UseForegroundScope.Body>
                 <ActivityAction x:TypeArguments="x:Object">
-                  <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="876,2427" sap2010:WorkflowViewState.IdRef="Sequence_6">
+                  <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="1002,2913" sap2010:WorkflowViewState.IdRef="Sequence_6">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
-                    <uwa:ShowPopup MyCustomHeight="{x:Null}" MyCustomWidth="{x:Null}" MyTitle="{x:Null}" MyXCoord="{x:Null}" MyYCoord="{x:Null}" DisplayName="Show Popup Window" sap:VirtualizedContainerService.HintSize="834,62" sap2010:WorkflowViewState.IdRef="ShowPopup_2" MyBackColor="Blue" MyFontFamily="Consolas" MyFontSize="Size_12" MyFontStyle="Regular" MyHPosition="Right" MyMessage="파일 변경 감지 후 번역 프로세스 시작 " MyTextColor="White" MyVPosition="Bottom" MyWidth="Half" />
-                    <ui:BlockUserInput TimeoutMS="{x:Null}" BlockType="All" DisplayName="Block User Input" sap:VirtualizedContainerService.HintSize="834,2233" sap2010:WorkflowViewState.IdRef="BlockUserInput_1" KeyModifiers="Alt" SpecialKey="True">
+                    <uwa:ShowPopup MyCustomHeight="{x:Null}" MyCustomWidth="{x:Null}" MyTitle="{x:Null}" MyXCoord="{x:Null}" MyYCoord="{x:Null}" DisplayName="Show Popup Window &gt; 번역 프로세스 시작 " sap:VirtualizedContainerService.HintSize="960,62" sap2010:WorkflowViewState.IdRef="ShowPopup_2" MyBackColor="Blue" MyFontFamily="Consolas" MyFontSize="Size_12" MyFontStyle="Regular" MyHPosition="Right" MyMessage="파일 변경 감지 후 번역 프로세스 시작 " MyTextColor="White" MyVPosition="Bottom" MyWidth="Half" />
+                    <ui:BlockUserInput TimeoutMS="{x:Null}" BlockType="All" DisplayName="Block User Input" sap:VirtualizedContainerService.HintSize="960,2719" sap2010:WorkflowViewState.IdRef="BlockUserInput_1" KeyModifiers="Alt" SpecialKey="True">
                       <ui:BlockUserInput.Body>
-                        <Sequence DisplayName="실행" sap:VirtualizedContainerService.HintSize="798,2106" sap2010:WorkflowViewState.IdRef="Sequence_11">
+                        <Sequence DisplayName="실행 &gt; 포그라운드 프로세스 시작 " sap:VirtualizedContainerService.HintSize="924,2592" sap2010:WorkflowViewState.IdRef="Sequence_11">
                           <sap:WorkflowViewStateService.ViewState>
                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
                               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                             </scg:Dictionary>
                           </sap:WorkflowViewStateService.ViewState>
-                          <uix:NApplicationCard AttachMode="ByInstance" CloseMode="IfOpenedByAppBrowser" DisplayName="Use Browser Edge: Google 번역" sap:VirtualizedContainerService.HintSize="756,2014" sap2010:WorkflowViewState.IdRef="NApplicationCard_2" InteractionMode="DebuggerApi" OpenMode="IfNotOpen" ScopeGuid="f04f4732-1ebe-46d2-a5ef-caea17416d13" Version="V1">
+                          <uix:NApplicationCard AttachMode="ByInstance" CloseMode="IfOpenedByAppBrowser" DisplayName="Use Browser Edge: Google 번역" sap:VirtualizedContainerService.HintSize="882,2500" sap2010:WorkflowViewState.IdRef="NApplicationCard_2" InteractionMode="DebuggerApi" OpenMode="IfNotOpen" ScopeGuid="f04f4732-1ebe-46d2-a5ef-caea17416d13" Version="V1">
                             <uix:NApplicationCard.Body>
                               <ActivityAction x:TypeArguments="x:Object">
                                 <ActivityAction.Argument>
                                   <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
                                 </ActivityAction.Argument>
-                                <Sequence DisplayName="실행" sap:VirtualizedContainerService.HintSize="722,1797" sap2010:WorkflowViewState.IdRef="Sequence_8">
+                                <Sequence DisplayName="실행 &gt; 구글 번역 사이트 이용 " sap:VirtualizedContainerService.HintSize="848,2283" sap2010:WorkflowViewState.IdRef="Sequence_8">
                                   <sap:WorkflowViewStateService.ViewState>
                                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                     </scg:Dictionary>
                                   </sap:WorkflowViewStateService.ViewState>
-                                  <uwa:HidePopup DisplayName="Hide Popup Window" sap:VirtualizedContainerService.HintSize="680,22" sap2010:WorkflowViewState.IdRef="HidePopup_1" />
-                                  <uix:NClick ClickType="Single" DisplayName="Click '문서'" sap:VirtualizedContainerService.HintSize="680,157" sap2010:WorkflowViewState.IdRef="NClick_1" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="f04f4732-1ebe-46d2-a5ef-caea17416d13" Version="V1">
+                                  <uwa:HidePopup DisplayName="Hide Popup Window" sap:VirtualizedContainerService.HintSize="806,22" sap2010:WorkflowViewState.IdRef="HidePopup_1" />
+                                  <uix:NClick ClickType="Single" DisplayName="Click '문서'" sap:VirtualizedContainerService.HintSize="806,157" sap2010:WorkflowViewState.IdRef="NClick_1" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="f04f4732-1ebe-46d2-a5ef-caea17416d13" Version="V1">
                                     <uix:NClick.Target>
                                       <uix:TargetAnchorable BrowserURL="https://translate.google.com/" DesignTimeRectangle="868, 331, 57, 38" ElementType="Text" FriendlyName="'문서'" FullSelectorArgument="&lt;webctrl aaname='문서' parentid='yDmH0d' tag='SPAN' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='문서' parentid='yDmH0d' tag='SPAN' type='' check:text='문서' /&gt;" Guid="c9b37194-ccdf-42ba-b80b-a10b89f4bf7d" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAD0AAAAqCAYAAAAAsVPKAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAHYcAAB2HAY/l8WUAAAJaSURBVGhD7Zoxb9pAFMf7OfgS/hIVEurWBbFVTFkZukRRBgupQxcPkTogZYs61GsZYEbOACIK0GKDW1FXSqpEyI6EkFj+9dmxsclLocRWcmcPv8Xv+XE/3+N8ku9VsVjEarUSjslkgmaziXq9DuYYRVjpKJ1OB+VyOVvSjF6vlz1phqIo2ZNut9vZkzYMI3vSjFxaDCwoB5coHOg4J+O7SFsm3nlF9mUI1SLqpgb30rdQj/06SpeKUyQq/XgRmmDAufR/kksTcYpcmoi/eOkbqIe+tKwtiTgF79KLGY68377E28/XdM4DEpXelydIXxh4HdQ5nMKMxraOi0vpJfqng0idAT5dRFo8Vennwg5ae4Sjj768pMxwR+XGSKK9n4X1LEvKL9yFszpwFzSHyI/Cq7Q+RcUb+BBnP9i1JcwvQ+8hFGqujL2RH2Mf6a7uF0+Rf75zbXfQNT/vzelVJOa+vmT/uiSbMBeRe2LwJr34E4oVagb6m/HIA5HkKb6RM556eyexAbnHvsZZIOwuXqr1yGbE+on39+KF2neo+uZ/nAvpJW5G5lrEXayU7pbF6moGORTX0Y+1ehLSQbufWEQ8GWnz6whSIKzZRA4B64wPVEdwIc1wcH4ycjcf215Hu8CNdJKkLv0SyaWJeC5NJ4TST+HYxG+qdirk0kR8F2kBCaXZ1zwqQTRiXy3Zd1sqSTRardZamh1GoZJEo9ForKUZ7DAKlSgK4/EYpVIpLl2pVLzDKNQNvMOEq9Wq5xmTDmCHUTRNw3w+JwvwguM43iSylg5mOOCBtPgU8RdkuO0+Nax9sQAAAABJRU5ErkJggg==" InformativeScreenshot="92da8516b8744d15b6b847fa018e9ca0.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Google 번역' /&gt;" SearchSteps="FuzzySelector, Image">
                                         <uix:TargetAnchorable.Anchors>
@@ -142,21 +139,21 @@
                                       </uix:TargetAnchorable>
                                     </uix:NClick.Target>
                                   </uix:NClick>
-                                  <uix:NClick ClickType="Single" DisplayName="Click '컴퓨터에서 찾아보기'" sap:VirtualizedContainerService.HintSize="680,157" sap2010:WorkflowViewState.IdRef="NClick_2" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="f04f4732-1ebe-46d2-a5ef-caea17416d13" Version="V1">
+                                  <uix:NClick ClickType="Single" DisplayName="Click '컴퓨터에서 찾아보기'" sap:VirtualizedContainerService.HintSize="806,157" sap2010:WorkflowViewState.IdRef="NClick_2" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="f04f4732-1ebe-46d2-a5ef-caea17416d13" Version="V1">
                                     <uix:NClick.Target>
                                       <uix:TargetAnchorable BrowserURL="https://translate.google.com/?sl=auto&amp;tl=ko&amp;op=docs" DesignTimeRectangle="1707, 773, 313, 72" ElementType="Text" FriendlyName="'컴퓨터에서 찾아보기'" FullSelectorArgument="&lt;webctrl tag='LABEL' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='LABEL' type='' aaname='컴퓨터에서 찾아보기' check:text='컴퓨터에서 찾아보기' /&gt;" Guid="ac7cc4f3-ccba-4224-ae9e-b02763494b1c" ImageBase64="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" InformativeScreenshot="7e3b46ae24a14eba203f6abb9841d3a4.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Google 번역' /&gt;" SearchSteps="Selector, FuzzySelector, Image" />
                                     </uix:NClick.Target>
                                   </uix:NClick>
-                                  <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Application: 열기" sap:VirtualizedContainerService.HintSize="680,345" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="Simulate" ScopeGuid="1642db22-ac54-4b22-9443-fe1a0c544c8b" Version="V1">
+                                  <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Application: 열기" sap:VirtualizedContainerService.HintSize="806,832" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="Simulate" ScopeGuid="1642db22-ac54-4b22-9443-fe1a0c544c8b" Version="V1">
                                     <uix:NApplicationCard.Body>
                                       <ActivityAction x:TypeArguments="x:Object">
                                         <ActivityAction.Argument>
                                           <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
                                         </ActivityAction.Argument>
-                                        <Sequence sap2010:Annotation.AnnotationText="파일 선택 다이얼로그 처리 " DisplayName="실행" sap:VirtualizedContainerService.HintSize="200,53" sap2010:WorkflowViewState.IdRef="Sequence_7">
+                                        <Sequence sap2010:Annotation.AnnotationText="파일 선택 다이얼로그 처리 " DisplayName="실행 &gt; 파일 선택하기 " sap:VirtualizedContainerService.HintSize="376,540" sap2010:WorkflowViewState.IdRef="Sequence_7">
                                           <sap:WorkflowViewStateService.ViewState>
                                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                               <x:Boolean x:Key="IsPinned">False</x:Boolean>
                                               <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
                                             </scg:Dictionary>
@@ -196,7 +193,7 @@
                                       </scg:Dictionary>
                                     </sap:WorkflowViewStateService.ViewState>
                                   </uix:NApplicationCard>
-                                  <uix:NClick ClickType="Single" DisplayName="Click '번역'" sap:VirtualizedContainerService.HintSize="680,157" sap2010:WorkflowViewState.IdRef="NClick_4" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="f04f4732-1ebe-46d2-a5ef-caea17416d13" Version="V1">
+                                  <uix:NClick ClickType="Single" DisplayName="Click '번역'" sap:VirtualizedContainerService.HintSize="806,157" sap2010:WorkflowViewState.IdRef="NClick_4" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="f04f4732-1ebe-46d2-a5ef-caea17416d13" Version="V1">
                                     <uix:NClick.Target>
                                       <uix:TargetAnchorable BrowserURL="https://translate.google.com/?sl=auto&amp;tl=ko&amp;op=docs" DesignTimeRectangle="2411, 819, 57, 38" ElementType="Text" FriendlyName="'번역'" FullSelectorArgument="&lt;webctrl aaname='번역' parentid='yDmH0d' tag='SPAN' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='번역' parentid='yDmH0d' tag='SPAN' type='' check:text='번역' /&gt;" Guid="2d55b06e-3cc8-42eb-9bee-30d20b693ff6" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAD0AAAAqCAYAAAAAsVPKAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAHYcAAB2HAY/l8WUAAAJGSURBVGhD7ZrBSxtBFIf9Q8RLBS3xVBB7EwuuoZdWDzVVEc899BRKD0VPJZdSWhBFpCAtHnItgZJLQAIeSnNQWoLES5YQCBJiIYklBH7dN2bMbvJY12wMmd198J3em8l+ebOzCzsjmqZhdCPpOR6sHmLqxUfMPHsNcjTjWWkzDyO7eBJ+7i9pYmLli/+kienFN/6TDi1/8p80bW6+kyYC6ftgK9sAxWU2y+b7Troqfg/FAp83sJWOF6/H59LdOTNSjPuhnqSjJ9jOVKDXmmKsjKtGA6ViGfGDY34coaL044MS9NZ0dnGZ1/EqysyhnPSHAnJSuFFHJn2Gtc1WbvMX3qeN7jv4Q0SoIX2Er3lRCtTK2OK6SESzOK616uxCCelYEbqo/IfUPpM3s3+Bkqit40esI9ev5e043EgnKriiQuoyl7fQ7vbvZEdOKWl5sXeU7lqFA9/IbOJW6eTf68I7STeRSXTklJLu6Z6uIt654Q1c2s3y3vjZvp18s3sT5ud0rY5U6o/lOf02dWG8pbXyt4Uy0gbO3sia0E/PoDHj1dq9zdi8e+vnJWzvHPHjCGWl3eBWuh8MXNoBwyktu+UmlOv0sEjLi7ebjEPpezqQZvJDQyDN5A0CaTv8Le0iBrKZBdJM3sCxtJe4kaaveVyB17B8tQwtf2aLvIbl+zQdRuGKvMajpXdtaYIOo3CFXmF89RvmF8JW6bnwkjiMwg1QHRKefRoRnhZpCR1GmXy5h7H17+wEqjC2nhBNpCUtOyzpkvY+Gv4DEIGT57G7GHMAAAAASUVORK5CYII=" InformativeScreenshot="3de3ee96114febf4cffac23809e4589d.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Google 번역' /&gt;" SearchSteps="FuzzySelector, Image">
                                         <uix:TargetAnchorable.Anchors>
@@ -207,9 +204,9 @@
                                       </uix:TargetAnchorable>
                                     </uix:NClick.Target>
                                   </uix:NClick>
-                                  <uix:NCheckState Exists="{x:Null}" DisplayName="Check App State '번역 다운로드'" sap:VirtualizedContainerService.HintSize="680,666" sap2010:WorkflowViewState.IdRef="NCheckState_1" ScopeIdentifier="f04f4732-1ebe-46d2-a5ef-caea17416d13" Timeout="30" Version="V1">
+                                  <uix:NCheckState Exists="{x:Null}" DisplayName="Check App State '번역 다운로드'" sap:VirtualizedContainerService.HintSize="806,665" sap2010:WorkflowViewState.IdRef="NCheckState_1" ScopeIdentifier="f04f4732-1ebe-46d2-a5ef-caea17416d13" Timeout="30" Version="V1">
                                     <uix:NCheckState.IfExists>
-                                      <Sequence DisplayName="타겟이 나타남" sap:VirtualizedContainerService.HintSize="376,448" sap2010:WorkflowViewState.IdRef="Sequence_9">
+                                      <Sequence DisplayName="타겟이 나타남" sap:VirtualizedContainerService.HintSize="376,447" sap2010:WorkflowViewState.IdRef="Sequence_9">
                                         <sap:WorkflowViewStateService.ViewState>
                                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -240,12 +237,14 @@
                                       </Sequence>
                                     </uix:NCheckState.IfExists>
                                     <uix:NCheckState.IfNotExists>
-                                      <Sequence DisplayName="타겟이 나타나지 않음" sap:VirtualizedContainerService.HintSize="250,85" sap2010:WorkflowViewState.IdRef="Sequence_10">
+                                      <Sequence DisplayName="타겟이 나타나지 않음" sap:VirtualizedContainerService.HintSize="376,186" sap2010:WorkflowViewState.IdRef="Sequence_10">
                                         <sap:WorkflowViewStateService.ViewState>
                                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                            <x:Boolean x:Key="IsPinned">False</x:Boolean>
                                           </scg:Dictionary>
                                         </sap:WorkflowViewStateService.ViewState>
+                                        <ui:LogMessage DisplayName="Log Message &gt; 번역 다운로드 버튼 " sap:VirtualizedContainerService.HintSize="334,93" sap2010:WorkflowViewState.IdRef="LogMessage_2" Message="[&quot;다운로드 버전이 나오지 않음&quot;]" />
                                       </Sequence>
                                     </uix:NCheckState.IfNotExists>
                                     <uix:NCheckState.Target>
@@ -283,8 +282,8 @@
       </ui:TriggerScope.Action>
       <ui:TriggerScope.Triggers>
         <scg:List x:TypeArguments="Activity" Capacity="4">
-          <ui:FileChangeTriggerV3 ChangeType="Created, Changed" DisplayName="File Change Trigger &gt; 워드문서 " FileNameFilter="*.docx" sap:VirtualizedContainerService.HintSize="970,183" sap2010:WorkflowViewState.IdRef="FileChangeTriggerV3_1" IncludeSubdirectories="False" NotifyFilters="FileName" Path="[Path.Combine( Environment.GetFolderPath( Environment.SpecialFolder.UserProfile), &quot;Downloads&quot;)]" />
-          <ui:FileChangeTriggerV3 ChangeType="Created, Changed" DisplayName="File Change Trigger &gt; PPT 문서" FileNameFilter="*.pptx" sap:VirtualizedContainerService.HintSize="970,183" sap2010:WorkflowViewState.IdRef="FileChangeTriggerV3_2" IncludeSubdirectories="False" NotifyFilters="FileName" Path="C:\Temp" />
+          <ui:FileChangeTriggerV3 ChangeType="Created, Changed" DisplayName="File Change Trigger &gt; 워드문서 " FileNameFilter="*.docx" sap:VirtualizedContainerService.HintSize="1096,183" sap2010:WorkflowViewState.IdRef="FileChangeTriggerV3_1" IncludeSubdirectories="False" NotifyFilters="FileName" Path="[Path.Combine( Environment.GetFolderPath( Environment.SpecialFolder.UserProfile), &quot;Downloads&quot;)]" />
+          <ui:FileChangeTriggerV3 ChangeType="Created, Changed" DisplayName="File Change Trigger &gt; PPT 문서" FileNameFilter="*.pptx" sap:VirtualizedContainerService.HintSize="1096,183" sap2010:WorkflowViewState.IdRef="FileChangeTriggerV3_2" IncludeSubdirectories="False" NotifyFilters="FileName" Path="C:\Temp" />
         </scg:List>
       </ui:TriggerScope.Triggers>
     </ui:TriggerScope>
