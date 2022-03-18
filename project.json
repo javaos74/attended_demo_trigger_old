@@ -5,7 +5,7 @@
   "dependencies": {
     "UiPath.System.Activities": "[21.10.4]",
     "UiPath.UIAutomation.Activities": "[21.10.5]",
-    "UiPathTeam.WhatsGoingOn.Activities": "[1.2.2]"
+    "UiPathTeam.StatusProgress.Activities": "[1.0.2]"
   },
   "webServices": [],
   "entitiesStores": [],
