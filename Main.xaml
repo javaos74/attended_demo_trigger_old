@@ -1,4 +1,4 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="Main" mva:VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="716,2288" sap2010:WorkflowViewState.IdRef="Main_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:u="clr-namespace:UiPathTeam_StatusProgress_Activities;assembly=UiPathTeam.StatusProgress.Activities" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="Main" mva:VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="716,2495" sap2010:WorkflowViewState.IdRef="Main_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:u="clr-namespace:UiPathTeam_StatusProgress_Activities;assembly=UiPathTeam.StatusProgress.Activities" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="84">
       <x:String>System.Activities.XamlIntegration</x:String>
@@ -85,7 +85,7 @@
       <AssemblyReference>Newtonsoft.Json</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Agent Assistant Robot" sap:VirtualizedContainerService.HintSize="726,2223" sap2010:WorkflowViewState.IdRef="Sequence_2">
+  <Sequence DisplayName="Agent Assistant Robot" sap:VirtualizedContainerService.HintSize="726,2430" sap2010:WorkflowViewState.IdRef="Sequence_2">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -97,7 +97,7 @@
         <InArgument x:TypeArguments="x:Boolean" />
       </u:Live_Status.ProgressAutoClose>
     </u:Live_Status>
-    <ui:TriggerScope DisplayName="Monitor Agent Action" sap:VirtualizedContainerService.HintSize="684,1895.5" sap2010:WorkflowViewState.IdRef="TriggerScope_1" SchedulingMode="Sequential">
+    <ui:TriggerScope DisplayName="Monitor Agent Action" sap:VirtualizedContainerService.HintSize="684,2102.5" sap2010:WorkflowViewState.IdRef="TriggerScope_1" SchedulingMode="Sequential">
       <ui:TriggerScope.Action>
         <ActivityAction x:TypeArguments="ui:FileChangeTriggerArgs">
           <ActivityAction.Argument>
@@ -309,6 +309,7 @@
         <scg:List x:TypeArguments="Activity" Capacity="4">
           <ui:FileChangeTriggerV3 ChangeType="Created, Changed" DisplayName="File Change Trigger &gt; 워드문서 " FileNameFilter="*.doc*" sap:VirtualizedContainerService.HintSize="648,183" sap2010:WorkflowViewState.IdRef="FileChangeTriggerV3_1" IncludeSubdirectories="False" NotifyFilters="FileName" Path="[Path.Combine( Environment.GetFolderPath( Environment.SpecialFolder.DesktopDirectory), &quot;번역해줘&quot;)]" />
           <ui:FileChangeTriggerV3 ChangeType="Created, Changed" DisplayName="File Change Trigger &gt; PPT 문서" FileNameFilter="*.ppt*" sap:VirtualizedContainerService.HintSize="648,183" sap2010:WorkflowViewState.IdRef="FileChangeTriggerV3_2" IncludeSubdirectories="False" NotifyFilters="FileName" Path="[Path.Combine( Environment.GetFolderPath( Environment.SpecialFolder.DesktopDirectory), &quot;번역해줘&quot;)]" />
+          <ui:FileChangeTriggerV3 ChangeType="Created, Changed" DisplayName="File Change Trigger &gt; PDF 문서" FileNameFilter="*.pdf*" sap:VirtualizedContainerService.HintSize="648,183" sap2010:WorkflowViewState.IdRef="FileChangeTriggerV3_3" IncludeSubdirectories="False" NotifyFilters="FileName" Path="[Path.Combine( Environment.GetFolderPath( Environment.SpecialFolder.DesktopDirectory), &quot;번역해줘&quot;)]" />
         </scg:List>
       </ui:TriggerScope.Triggers>
     </ui:TriggerScope>
