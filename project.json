@@ -1,11 +1,12 @@
 {
   "name": "어텐디드자동화_트리거",
+  "projectId": "b573d5b3-c477-4acc-bfb5-a49926c045b6",
   "description": "트리거 기반 어텐디드 자동화 ",
   "main": "Main.xaml",
   "dependencies": {
-    "UiPath.System.Activities": "[21.10.4]",
-    "UiPath.UIAutomation.Activities": "[21.10.5]",
-    "UiPathTeam.StatusProgress.Activities": "[1.0.2]"
+    "UiPath.System.Activities": "[23.10.3]",
+    "UiPath.UIAutomation.Activities": "[23.10.8]",
+    "UiPathTeam.StatusProgress.Activities": "[1.0.3]"
   },
   "webServices": [],
   "entitiesStores": [],
@@ -19,6 +20,7 @@
     "isAttended": false,
     "requiresUserInteraction": false,
     "supportsPersistence": false,
+    "workflowSerialization": "DataContract",
     "excludedLoggedData": [
       "Private:*",
       "*password*"
@@ -26,7 +28,8 @@
     "executionType": "Workflow",
     "readyForPiP": false,
     "startsInPiP": false,
-    "mustRestoreAllDependencies": true
+    "mustRestoreAllDependencies": true,
+    "pipType": "ChildSession"
   },
   "designOptions": {
     "projectProfile": "Developement",
@@ -39,7 +42,8 @@
       "ignoredFiles": []
     },
     "fileInfoCollection": [],
-    "modernBehavior": true
+    "modernBehavior": true,
+    "saveToCloud": false
   },
   "expressionLanguage": "VisualBasic",
   "entryPoints": [
@@ -53,5 +57,5 @@
   "isTemplate": false,
   "templateProjectData": {},
   "publishData": {},
-  "targetFramework": "Legacy"
+  "targetFramework": "Windows"
 }

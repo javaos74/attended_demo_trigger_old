@@ -10,5 +10,7 @@
       "Key": "Type",
       "Value": "Edemo"
     }
-  ]
+  ],
+  "SeparateRuntimeDependencies": true,
+  "IncludeSources": true
 }
