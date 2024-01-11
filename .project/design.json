@@ -1,14 +1,10 @@
 {
   "Tags": [
     {
-      "Key": "데모"
-    },
-    {
       "Key": "어텐디드 자동화"
     },
     {
-      "Key": "Type",
-      "Value": "Edemo"
+      "Key": "Shinhan"
     }
   ],
   "SeparateRuntimeDependencies": true,
